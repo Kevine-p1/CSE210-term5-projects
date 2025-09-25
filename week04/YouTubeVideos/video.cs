@@ -3,29 +3,40 @@ using System.Collections.Generic;
 
 public class Video
 {
-    // Properties
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public int LengthSeconds { get; set; }
+    // Private fields use _underscoreCamelCase
+    private string _title;
+    private string _author;
+    private int _lengthSeconds;
+    private List<Comment> _comments = new List<Comment>();
 
-    // List of comments
-    private List<Comment> comments = new List<Comment>();
+    // Constructor
+    public Video(string title, string author, int lengthSeconds)
+    {
+        _title = title;
+        _author = author;
+        _lengthSeconds = lengthSeconds;
+    }
 
-    // Add a comment to this video
+    // Public getters (no setters needed for this assignment)
+    public string Title => _title;
+    public string Author => _author;
+    public int LengthSeconds => _lengthSeconds;
+
+    // Add a comment
     public void AddComment(Comment comment)
     {
-        comments.Add(comment);
+        _comments.Add(comment);
     }
 
-    // Return the number of comments
+    // Return number of comments
     public int GetNumberOfComments()
     {
-        return comments.Count;
+        return _comments.Count;
     }
 
-    // Provide read-only access to comments
+    // Return the comment list (read-only)
     public List<Comment> GetComments()
     {
-        return comments;
+        return _comments;
     }
 }
