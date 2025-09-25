@@ -4,26 +4,26 @@ class Program
 {
     static void Main()
     {
-        // Create addresses
-        Address addr1 = new Address("123 Main St", "Boise", "ID", "USA");
-        Address addr2 = new Address("45 King St", "Toronto", "ON", "Canada");
-
-        // Create customers
+        // ----- Order 1 -----
+        Address addr1 = new Address("123 Main St", "Springfield", "IL", "USA");
         Customer cust1 = new Customer("Alice Johnson", addr1);
-        Customer cust2 = new Customer("Liam Chen", addr2);
 
-        // Create orders
         Order order1 = new Order(cust1);
-        order1.AddProduct(new Product("Laptop Sleeve", "LS100", 25.99, 2));
-        order1.AddProduct(new Product("Wireless Mouse", "WM200", 19.50, 1));
+        order1.AddProduct(new Product("Laptop", "P001", 999.99, 1));
+        order1.AddProduct(new Product("Mouse", "P002", 25.50, 2));
+
+        // ----- Order 2 -----
+        Address addr2 = new Address("456 Elm St", "Toronto", "ON", "Canada");
+        Customer cust2 = new Customer("Bob Smith", addr2);
 
         Order order2 = new Order(cust2);
-        order2.AddProduct(new Product("Bluetooth Speaker", "BS300", 49.99, 1));
-        order2.AddProduct(new Product("Travel Mug", "TM400", 12.75, 3));
+        order2.AddProduct(new Product("Headphones", "P003", 89.99, 1));
+        order2.AddProduct(new Product("Webcam", "P004", 59.99, 1));
+        order2.AddProduct(new Product("Keyboard", "P005", 49.99, 1));
 
-        // Display results
+        // Display orders
         DisplayOrder(order1);
-        Console.WriteLine(new string('-', 40));
+        Console.WriteLine();
         DisplayOrder(order2);
     }
 

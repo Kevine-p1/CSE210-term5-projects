@@ -1,28 +1,27 @@
-
-using System;
-
 public class Address
 {
-    private string street;
-    private string city;
-    private string state;
-    private string country;
+    private string _street;
+    private string _city;
+    private string _state;
+    private string _country;
 
     public Address(string street, string city, string state, string country)
     {
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.country = country;
+        _street = street;
+        _city = city;
+        _state = state;
+        _country = country;
     }
 
     public bool IsInUSA()
     {
-        return country.Trim().ToUpper() == "USA";
+        return _country.Trim().ToUpper() == "USA";
     }
 
-    public override string ToString()
+    public string GetFullAddress()
     {
-        return $"{street}\n{city}, {state}\n{country}";
+        return $"{_street}\n{_city}, {_state}\n{_country}";
     }
 }
+
+ 
