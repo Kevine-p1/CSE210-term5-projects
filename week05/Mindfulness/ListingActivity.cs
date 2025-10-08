@@ -50,7 +50,7 @@ namespace Mindfulness
                 Console.WriteLine($"{index++}. {entry}");
             }
 
-            ShowEndMessage();
+           
         }
     }
 }
